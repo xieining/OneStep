@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneStep | 每日智慧本金保護與衍生收益優化艙</title>
+    <!-- Google Fonts for Premium Editorial Look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Serif+TC:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient Grid & Glow Effects -->
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Main Workspace Container -->
+    <div class="app-container">
+        
+        <!-- Header Navigation Bar -->
+        <header class="app-header">
+            <div class="header-edition">DAILY CLIENT COMPANION — PORTAL v2.5</div>
+            <div class="header-main">
+                <div class="brand-wrap">
+                    <span class="brand-logo">⏳</span>
+                    <h1 class="brand-title">OneStep <span>Studio</span></h1>
+                </div>
+                <div class="header-date-box">
+                    <span id="current-date-display">2026.05.10</span>
+                    <span class="status-indicator">SYSTEM ACTIVE</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Progress Metrics Board -->
+        <section class="metrics-bar">
+            <div class="metric-card">
+                <div class="card-label">METRIC // 今日行動推進率</div>
+                <div class="progress-container">
+                    <div class="progress-track">
+                        <div class="progress-fill" id="action-progress-fill" style="width: 0%;"></div>
+                    </div>
+                    <span class="progress-text" id="action-progress-text">0%</span>
+                </div>
+            </div>
+            <div class="metric-card summary-card">
+                <div class="quote-text">「多花就會十倍回來，專注少事價值多。」</div>
+                <div class="quote-author">INXIE 指導心法</div>
+            </div>
+        </section>
+
+        <!-- Core Dashboard Layout -->
+        <main class="dashboard-grid">
+            
+            <!-- COLUMN 1: Today's Focus (The OneStep) -->
+            <div class="dashboard-col col-focus">
+                <div class="glass-card main-focus-card">
+                    <div class="card-label">01 // 今日核心一階 (Today's OneStep)</div>
+                    
+                    <div class="focus-input-wrap">
+                        <input type="text" id="input-daily-onestep" placeholder="在此輸入今天最核心推進的一件事...">
+                        <span class="focus-decoration">ONE PRIORITY TO RULE THEM ALL</span>
+                    </div>
+                    <div class="subgoals-wrap">
+                        <div class="subgoals-header">三個支撐子目標 (3 Supporting Steps)</div>
+                        <div class="subgoal-item">
+                            <input type="checkbox" id="chk-subgoal-1" class="step-cb">
+                            <input type="text" id="input-subgoal-1" placeholder="子目標一...">
+                        </div>
+                        <div class="subgoal-item">
+                            <input type="checkbox" id="chk-subgoal-2" class="step-cb">
+                            <input type="text" id="input-subgoal-2" placeholder="子目標二...">
+                        </div>
+                        <div class="subgoal-item">
+                            <input type="checkbox" id="chk-subgoal-3" class="step-cb">
+                            <input type="text" id="input-subgoal-3" placeholder="子目標三...">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sleek Bulletin Board -->
+                <div class="glass-card bulletin-card">
+                    <div class="card-label">02 // 新責任主動承接欄</div>
+                    
+                    <div id="bulletin-list" class="bulletin-list">
+                        <!-- Populated Dynamically -->
+                    </div>
+                    <button class="add-bulletin-btn" id="btn-add-bulletin">+ 新增戰略方向</button>
+                </div>
+            </div>
+
+            <!-- COLUMN 2: Grouped Selection Action Pills -->
+            <div class="dashboard-col col-actions">
+                <div class="glass-card action-pills-card">
+                    <div class="card-label">03 // 日常重複價值事項</div>
+
+                    <!-- 1. Reusable Core Assets (重複可用核心資產) -->
+                    <div class="pills-group">
+                        <div class="group-micro-title theme-red">
+                            <span>03A // </span>
+                            <input type="text" id="label-group-a" class="editable-group-title" value="" placeholder="填入分類 A...">
+                        </div>
+                        <div class="pills-flex">
+                            <div class="pill-cb-label border-red">
+                                <input type="checkbox" id="hab-repeat-teaching" class="step-cb">
+                                <input type="text" id="label-hab-repeat-teaching" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label border-green">
+                                <input type="checkbox" id="hab-repeat-belief" class="step-cb">
+                                <input type="text" id="label-hab-repeat-belief" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Aesthetic & Well-being (美學與療癒健康) -->
+                    <div class="pills-group">
+                        <div class="group-micro-title theme-pink">
+                            <span>03B // </span>
+                            <input type="text" id="label-group-b" class="editable-group-title" value="" placeholder="填入分類 B...">
+                        </div>
+                        <div class="pills-flex">
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-body" class="step-cb">
+                                <input type="text" id="label-hab-body" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-face" class="step-cb">
+                                <input type="text" id="label-hab-face" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-rest" class="step-cb">
+                                <input type="text" id="label-hab-rest" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-travel" class="step-cb">
+                                <input type="text" id="label-hab-travel" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label border-blue">
+                                <input type="checkbox" id="hab-meditation" class="step-cb">
+                                <input type="text" id="label-hab-meditation" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Intellect & Mindset (思考、研究與對話) -->
+                    <div class="pills-group">
+                        <div class="group-micro-title theme-yellow">
+                            <span>03C // </span>
+                            <input type="text" id="label-group-c" class="editable-group-title" value="" placeholder="填入分類 C...">
+                        </div>
+                        <div class="pills-flex">
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-mindset" class="step-cb">
+                                <input type="text" id="label-hab-mindset" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-context" class="step-cb">
+                                <input type="text" id="label-hab-context" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-chat" class="step-cb">
+                                <input type="text" id="label-hab-chat" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-research-network" class="step-cb">
+                                <input type="text" id="label-hab-research-network" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label border-purple">
+                                <input type="checkbox" id="hab-research-bet" class="step-cb">
+                                <input type="text" id="label-hab-research-bet" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Leverage & Automation (科技與團隊自動化) -->
+                    <div class="pills-group">
+                        <div class="group-micro-title theme-teal">
+                            <span>03D // </span>
+                            <input type="text" id="label-group-d" class="editable-group-title" value="" placeholder="填入分類 D...">
+                        </div>
+                        <div class="pills-flex">
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-main-speed" class="step-cb">
+                                <input type="text" id="label-hab-main-speed" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-side-speed" class="step-cb">
+                                <input type="text" id="label-hab-side-speed" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label border-teal">
+                                <input type="checkbox" id="hab-allocate-agent" class="step-cb">
+                                <input type="text" id="label-hab-allocate-agent" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-gov-admin" class="step-cb">
+                                <input type="text" id="label-hab-gov-admin" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-classic-ctrl" class="step-cb">
+                                <input type="text" id="label-hab-classic-ctrl" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Capital & Risk Control (資產流與防禦) -->
+                    <div class="pills-group">
+                        <div class="group-micro-title theme-gold">
+                            <span>03E // </span>
+                            <input type="text" id="label-group-e" class="editable-group-title" value="" placeholder="填入分類 E...">
+                        </div>
+                        <div class="pills-flex">
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-expenses" class="step-cb">
+                                <input type="text" id="label-hab-expenses" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-trading" class="step-cb">
+                                <input type="text" id="label-hab-trading" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-artistic-altitude" class="step-cb">
+                                <input type="text" id="label-hab-artistic-altitude" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-new-responsibility" class="step-cb">
+                                <input type="text" id="label-hab-new-responsibility" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                            <div class="pill-cb-label">
+                                <input type="checkbox" id="hab-stable-rake" class="step-cb">
+                                <input type="text" id="label-hab-stable-rake" class="pill-text-input" value="" placeholder="填入事項...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMN 3: Wisdom Siphoner Compiler & Compounding Curve -->
+            <div class="dashboard-col col-siphon">
+                
+                <!-- Wisdom Siphoner (利息編譯過濾器) -->
+                <div class="glass-card siphon-card">
+                    <div class="card-label">04 // 智慧利息過濾編譯器 (Wisdom Siphoner)</div>
+                    
+                    <div class="siphon-body">
+                        <div class="form-group">
+                            <label class="input-label">輸入今日智慧核心 (Raw Input Idea/Draft)</label>
+                            <textarea id="raw-insight-input" placeholder="寫下您今天的心得、原創筆記、核心技術亮點或知識..." class="siphon-textarea"></textarea>
+                        </div>
+
+                        <div class="siphon-controls">
+                            <div class="form-group compact">
+                                <label class="input-label">今日同步頻率 (Vibe Shift)</label>
+                                <select id="siphon-vibe-select" class="siphon-select">
+                                    <option value="relaxed">🌿 溫慢鬆弛感自媒體風</option>
+                                    <option value="depth">📚 高智商哲學深度精闢風</option>
+                                    <option value="energetic">🔥 正向高能創業家引流風</option>
+                                </select>
+                            </div>
+                            <div class="siphon-btn-group" style="display: flex; gap: 0.5rem; width: 100%; margin-top: 0.4rem;">
+                                <button class="btn-siphon-run" id="btn-compile-siphon" style="flex: 1;">🚀 編譯過濾利息</button>
+                                <button class="btn-siphon-cert" id="btn-view-cert" style="background: rgba(233,196,106,0.12); border: 1px solid rgba(233,196,106,0.25); color: var(--mustard); font-family: var(--font-sans); font-weight: 600; font-size: 0.75rem; padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer; transition: var(--transition-fast); display: flex; align-items: center; justify-content: center; gap: 4px; outline: none; height: 34px;">🛡️ 安全憑證</button>
+                            </div>
+                        </div>
+
+                        <!-- Output Terminal Console -->
+                        <div class="siphon-output-wrap">
+                            <div class="output-header">
+                                <span>编译终端 (CONPILED TRANS-PREVIEW)</span>
+                                <button class="btn-copy-output" id="btn-copy-output">📋 複製利息內容</button>
+                            </div>
+                            <div class="output-console-body" id="siphon-console-output">
+                                <p class="placeholder-text">[等待核心輸入...] 點擊編譯按鈕開始自動過濾並附帶有條件撤銷協議與反引流機制</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mini Compounding Visualizer (0-80 複利圖) -->
+                <div class="glass-card compounding-card">
+                    <div class="card-label">05 // 0 - 80 歲人生複利雙線 (Compounding Curve)</div>
+                    
+                    <div class="timeline-visual">
+                        <svg id="mini-compounding-svg" viewBox="0 0 400 150">
+                            <!-- Axis -->
+                            <line x1="30" y1="120" x2="380" y2="120" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+                            <line x1="30" y1="20" x2="30" y2="120" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+                            
+                            <!-- Legend -->
+                            <text x="35" y="15" fill="rgba(255,255,255,0.4)" font-size="8">🔴 內在成就</text>
+                            <text x="105" y="15" fill="rgba(255,255,255,0.4)" font-size="8">🔵 外在高度</text>
+
+                            <!-- Curves -->
+                            <path id="mini-curve-intrinsic" d="" fill="none" stroke="var(--terracotta)" stroke-width="3" />
+                            <path id="mini-curve-extrinsic" d="" fill="none" stroke="var(--slate)" stroke-width="3" />
+                            <g id="milestone-dots-group"></g>
+                        </svg>
+                        
+                        <!-- Interactive Age Slider -->
+                        <div class="age-slider-wrap">
+                            <label class="slider-label">查看歲數軌跡: <span id="display-slider-age" class="text-gold">30</span> 歲</label>
+                            <input type="range" id="slider-compounding-age" min="0" max="80" value="30" class="premium-slider">
+                        </div>
+
+                        <!-- Current Age Achievement Milestone Display -->
+                        <div class="milestone-display-box" id="milestone-text-box">
+                            <div class="milestone-title">🎯 該年齡段智慧成就標記（可直接填入修改）：</div>
+                            <textarea id="milestone-content-text" class="milestone-textarea-direct" placeholder="填入事項..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Beautiful Premium Security Certificate Modal -->
+    <div class="modal-overlay" id="cert-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(5,6,7,0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); z-index: 1000; align-items: center; justify-content: center; padding: 1rem; box-sizing: border-box;">
+        <div class="modal-card cert-card" style="max-width: 500px; width: 100%; border: 1px solid rgba(233,196,106,0.35); background: linear-gradient(145deg, #121316, #1e1e24); box-shadow: 0 10px 40px rgba(0,0,0,0.8), 0 0 30px rgba(233,196,106,0.15); border-radius: 12px; padding: 2rem; position: relative; box-sizing: border-box; animation: modalEnter 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
+            <button class="modal-close" id="btn-close-cert" style="position: absolute; top: 1.2rem; right: 1.2rem; background: transparent; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; outline: none; padding: 0.2rem;">&times;</button>
+            
+            <!-- Certificate Header -->
+            <div class="cert-header" style="text-align: center; margin-bottom: 1.5rem; border-bottom: 1px dashed rgba(233,196,106,0.25); padding-bottom: 1rem;">
+                <div class="cert-badge" style="width: 60px; height: 60px; background: rgba(233,196,106,0.06); border: 2px solid var(--mustard); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem; box-shadow: 0 0 15px rgba(233,196,106,0.25); animation: pulseGlow 2s infinite alternate;">
+                    <span style="font-size: 1.8rem;">🛡️</span>
+                </div>
+                <h3 style="font-family: 'Noto Serif TC', serif; color: var(--mustard); font-size: 1.2rem; letter-spacing: 1px; margin: 0;">ONESTEP 數位安全智慧授權憑證</h3>
+                <span style="font-size: 0.65rem; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase;">SECURE ENDPOINT LICENSE // VER-2.5</span>
+            </div>
+
+            <!-- Certificate Body -->
+            <div class="cert-body" style="font-size: 0.82rem; line-height: 1.6; color: var(--text-bright); display: flex; flex-direction: column; gap: 1rem; font-family: var(--font-sans);">
+                
+                <!-- Status Row -->
+                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.25); padding: 0.5rem 0.8rem; border-radius: 6px; border-left: 3px solid #2a9d8f;">
+                    <span style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); text-transform: uppercase;">IP Shield Protocol</span>
+                    <span style="font-size: 0.72rem; color: #2a9d8f; font-weight: 700; font-family: var(--font-mono); display: flex; align-items: center; gap: 4px;">● VERIFIED & ACTIVE</span>
+                </div>
+
+                <!-- Clauses -->
+                <div style="display: flex; flex-direction: column; gap: 0.8rem; background: rgba(0,0,0,0.15); padding: 0.8rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.03);">
+                    
+                    <div style="display: flex; gap: 8px; align-items: flex-start;">
+                        <span style="color: var(--mustard); font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.2;">[01]</span>
+                        <div>
+                            <strong style="color: var(--mustard); font-size: 0.85rem; display: block;">本金防禦防護 (Principal Safe-Shield)</strong>
+                            <p style="font-size: 0.75rem; color: var(--text-muted); margin: 2px 0 0; font-family: 'Noto Serif TC', serif; font-weight: 500;">所有輸入的原始點子與商業本金（Raw Insights）嚴格被限制於本端沙盒運行，不對任何未經授權的外部抓取或 AI 訓練披露。</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 8px; align-items: flex-start;">
+                        <span style="color: var(--mustard); font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.2;">[02]</span>
+                        <div>
+                            <strong style="color: var(--mustard); font-size: 0.85rem; display: block;">可撤銷授權衍生 (Revocable Authorization)</strong>
+                            <p style="font-size: 0.75rem; color: var(--text-muted); margin: 2px 0 0; font-family: 'Noto Serif TC', serif; font-weight: 500;">衍生之自媒體流、社群內容或利息衍生文案（Interest Streams），原創產權始終 100% 歸屬於授權人（謝穎 / INXIE）。原創作者保留隨時、無條件撤銷或強制下架該授權內容之所有權利。</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 8px; align-items: flex-start;">
+                        <span style="color: var(--mustard); font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.2;">[03]</span>
+                        <div>
+                            <strong style="color: var(--mustard); font-size: 0.85rem; display: block;">反向引流錨定 (Anti-Drainage Deep-Linking)</strong>
+                            <p style="font-size: 0.75rem; color: var(--text-muted); margin: 2px 0 0; font-family: 'Noto Serif TC', serif; font-weight: 500;">編譯產出之文本均帶有自動化不可分割的反引流與流量保護路由，保證衍生利息向原作者的核心個人品牌與 Skool 漏斗自動精準錨定引流。</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 8px; align-items: flex-start;">
+                        <span style="color: var(--mustard); font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.2;">[04]</span>
+                        <div>
+                            <strong style="color: var(--mustard); font-size: 0.85rem; display: block;">安全性動態加密認證 (SHA-256 Auth Hash)</strong>
+                            <p style="font-size: 0.7rem; color: var(--text-muted); margin: 2px 0 0; font-family: var(--font-mono); word-break: break-all;">HASH: <span id="cert-session-hash" style="color: #2a9d8f;">A8E409FD661B1B41D99C30C7B2F...</span></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer Signatures -->
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.8rem;">
+                    <div>
+                        <div style="font-size: 0.62rem; color: var(--text-muted); font-family: var(--font-mono); text-transform: uppercase;">AUTHOR / LICENSOR</div>
+                        <div style="font-size: 0.85rem; color: var(--text-bright); font-weight: 700; margin-top: 1px; font-family: 'Noto Serif TC', serif;">謝穎 INXIE</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 0.62rem; color: var(--text-muted); font-family: var(--font-mono); text-transform: uppercase;">CRYPTOGRAPHIC SEAL</div>
+                        <div style="font-size: 0.8rem; color: var(--mustard); font-weight: 700; margin-top: 1px; font-family: var(--font-mono);">OneStep v2.5 SECURE</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Toast Notification -->
+    <div class="toast-wrap" id="toast-notify"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
